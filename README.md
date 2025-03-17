@@ -69,6 +69,15 @@ Tests include:
 
 ---
 
+
+## 📬 Postman Collection
+
+You can find the Postman collection JSON file here:
+- [`/postman/collection.json`](./postman/collection.json)
+
+Import this JSON file into Postman to test all the available API endpoints.
+
+
 ## Notes
 - This project uses **MongoMemoryServer** for in-memory testing.
 - App defaults to running on `http://localhost:5000`

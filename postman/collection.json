@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "c3e72df1-9620-471d-83ec-74a42738e944",
+		"name": "category-api-with-auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34856872"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Karan\",\r\n    \"email\": \"krjaviya2000@gmail.com\",\r\n    \"password\": \"Abc@223133\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"krjaviya2000@gmail.com\",\r\n    \"password\": \"Abc@223133\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2Q4NDQ4MmNjMjI2ZTM5NGNhYTg5NTciLCJpYXQiOjE3NDIyMjY1NjUsImV4cCI6MTc0MjIzMDE2NX0.FsAkCI9BkijBy_bD0n20WiVCju9GpTKOT8dLJEtxNxg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Test.1.1.1\"\r\n    // \"parent\": \"67d8455bcece52f18b5bcaaa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/category/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"category",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2Q4NDQ4MmNjMjI2ZTM5NGNhYTg5NTciLCJpYXQiOjE3NDIyMjY1NjUsImV4cCI6MTc0MjIzMDE2NX0.FsAkCI9BkijBy_bD0n20WiVCju9GpTKOT8dLJEtxNxg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/category/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"category",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2Q4NDQ4MmNjMjI2ZTM5NGNhYTg5NTciLCJpYXQiOjE3NDIyMjY1NjUsImV4cCI6MTc0MjIzMDE2NX0.FsAkCI9BkijBy_bD0n20WiVCju9GpTKOT8dLJEtxNxg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2Q4MzVmMjlkNzZhMWZkYjQ2ZDdjNzUiLCJpYXQiOjE3NDIyMjI4MzcsImV4cCI6MTc0MjIyNjQzN30.eDWik9bXrnzYBWeqCwS1m-Zj52L0A_mBqe40UoucB98"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/category/67d84b1862c3e6317a101815",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"category",
+						"67d84b1862c3e6317a101815"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2Q4NGIwZjYyYzNlNjMxN2ExMDE4MTIiLCJpYXQiOjE3NDIyMjgyNDIsImV4cCI6MTc0MjIzMTg0Mn0.YDY1RgMliazuanYEDzAWDPaQqApP0qBgqwgRp5hEcS4"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"inactive\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/category/67d84b1862c3e6317a101815",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"category",
+						"67d84b1862c3e6317a101815"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
